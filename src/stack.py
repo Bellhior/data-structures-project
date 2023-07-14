@@ -25,14 +25,15 @@ class Stack:
         :param data: данные, которые будут добавлены на вершину стека
         """
         # выделение нового узла
-        node = Node(data)
+        param = Node(data)
         # установка данных
-        node.data = data
+        param.data = data
         # установка указателя нового узла так, чтобы он указывал на текущий
         # верхний узел списка
-        node.next_node = self.top
+        param.next_node = self.top
         # обновление
-        self.top = node
+        self.top = param
+        return self.top
 
     def pop(self):
         """
@@ -40,8 +41,6 @@ class Stack:
 
         :return: данные удаленного элемента
         """
-        # данные верхнего узла
-        top = self.top.data
         # обновление верхнего указателя, чтобы он указывал на следующий узел
         self.top = self.top.next_node
-        return top
+        return self.top
