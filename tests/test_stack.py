@@ -6,6 +6,8 @@ from src.stack import Stack
 Я написал, как проводил тесты, всё получалось в формате  <__main__.Node object at 0x0000025CCF464F90>
 и Unittest выдаёт ошибки, числовые значения не получаются, оттестил как мог
 """
+
+
 class TestStack(unittest.TestCase):
 
     def test_push(self):
@@ -23,6 +25,7 @@ class TestStack(unittest.TestCase):
         self.assertEqual(Stack.pop(), Stack.push("data1"))
         # print(stack.pop() == None
         self.assertEqual(Stack.pop(), None)
+
 
 if __name__ == '__main__':
     unittest.main()
