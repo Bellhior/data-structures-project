@@ -17,3 +17,4 @@ def test_push(stack):
     assert stack.top.data == "data3"
     assert stack.top.next_node.data == "data2"
     assert stack.top.next_node.next_node.data == "data1"
+    assert stack.top.next_node.next_node.next_node is None
