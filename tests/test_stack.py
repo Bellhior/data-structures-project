@@ -1,31 +1,19 @@
-"""Здесь надо написать тесты с использованием unittest для модуля stack."""
-import unittest
-from src.stack import Stack
-
-"""
-Я написал, как проводил тесты, всё получалось в формате  <__main__.Node object at 0x0000025CCF464F90>
-и Unittest выдаёт ошибки, числовые значения не получаются, оттестил как мог
-"""
+from src.stack import Node
 
 
-class TestStack(unittest.TestCase):
-
-    def test_push(self):
-        # print(stack.push("data1")) == print(stack.top)
-        self.assertEqual(Stack.push("data1"), Stack.top)
-        # print(stack.push("data2")) == print(stack.top)
-        self.assertEqual(Stack.push("data2"), Stack.top)
-        # print(stack.push("data3")) == print(stack.top)
-        self.assertEqual(Stack.push("data3"), Stack.top)
-
-    def test_pop(self):
-        # print(stack.pop() == print(stack.push("data2"))
-        self.assertEqual(Stack.pop(), Stack.push("data2"))
-        # print(stack.pop() == print(stack.push("data1"))
-        self.assertEqual(Stack.pop(), Stack.push("data1"))
-        # print(stack.pop() == None
-        self.assertEqual(Stack.pop(), None)
+# TestCase1
+def test_node():
+    """Тестирование класса Node"""
+    node_1 = Node(1, None)
+    node_2 = Node(2, node_1)
+    assert node_1.data == 1
+    assert node_2.data == 2
+    assert node_1.next_node is None
+    assert node_2.next_node == node_1
 
 
-if __name__ == '__main__':
-    unittest.main()
+# TestCase2
+def test_push(stack):
+    assert stack.top.data == "data3"
+    assert stack.top.next_node.data == "data2"
+    assert stack.top.next_node.next_node.data == "data1"
