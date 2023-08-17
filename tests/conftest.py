@@ -9,3 +9,4 @@ def stack():
     node.push("data1")
     node.push("data2")
     node.push("data3")
+    return node
