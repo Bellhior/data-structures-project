@@ -1,7 +1,4 @@
 from src.stack import Node, Stack
-"""
-Вместо __main__ => __src.stack__ в print(n1) и print(n2.next_node)
-"""
 
 
 if __name__ == '__main__':
