@@ -33,5 +33,7 @@ class Stack:
 
         :return: данные удаленного элемента
         """
+        data = self.top.data
         # обновление верхнего указателя, чтобы он указывал на следующий узел
         self.top = self.top.next_node
+        return data
